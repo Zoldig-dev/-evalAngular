@@ -6,9 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StatistiqueListComponent } from './statistique-list/statistique-list.component';
 import { FormComponent } from './form/form.component';
+import { BordureDirective } from './directives/bordure.directive';
 
 @NgModule({
-  declarations: [AppComponent, StatistiqueListComponent, FormComponent],
+  declarations: [AppComponent, StatistiqueListComponent, FormComponent, BordureDirective],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
