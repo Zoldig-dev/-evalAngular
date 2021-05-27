@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Statistique } from './models/statistique';
+import { StatistiqueService } from './statistique.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,14 +8,11 @@ import { Statistique } from './models/statistique';
 })
 export class AppComponent {
   title = 'eval';
-  public stats: Statistique[] = [
-    new Statistique('1', 'test1', '10M', 'SUCCESS'),
-    new Statistique('2', 'test2', '20M', 'WARNING'),
-  ];
+  public stats!: Statistique[];
 
-  constructor() {
-    setTimeout(() => {
-      this.stats.push(new Statistique('3', 'test3', '30M', 'DANGER'));
-    }, 2000);
+  constructor(private api: StatistiqueService) {
+    this.api.getStats().then((statsTab) => {
+      this.stats = statsTab;
+    });
   }
 }
