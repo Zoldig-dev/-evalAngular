@@ -1,2 +1,5 @@
-<app-statistique-list></app-statistique-list>
+<app-statistique-list
+  *ngFor="let statistique of stats"
+  [statistique]="statistique"
+></app-statistique-list>
 <router-outlet></router-outlet>
