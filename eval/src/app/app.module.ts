@@ -5,9 +5,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StatistiqueListComponent } from './statistique-list/statistique-list.component';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
-  declarations: [AppComponent, StatistiqueListComponent],
+  declarations: [AppComponent, StatistiqueListComponent, FormComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
