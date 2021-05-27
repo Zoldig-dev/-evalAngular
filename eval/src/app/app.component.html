@@ -1,5 +1,6 @@
 <app-statistique-list
-  *ngFor="let statistique of stats"
+  *ngFor="let statistique of stat"
   [statistique]="statistique"
+  (demandeSuppression)="supStat(statistique)"
 ></app-statistique-list>
 <router-outlet></router-outlet>

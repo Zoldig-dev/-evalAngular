@@ -8,11 +8,18 @@ import { StatistiqueService } from './statistique.service';
 })
 export class AppComponent {
   title = 'eval';
-  public stats!: Statistique[];
+  public stat!: Statistique[];
 
   constructor(private api: StatistiqueService) {
     this.api.getStats().then((statsTab) => {
-      this.stats = statsTab;
+      this.stat = statsTab;
+    });
+  }
+  supStat(stat: Statistique) {
+    this.api.supStat(stat.id).then((retourApi: { statut: string }) => {
+      if (retourApi.statut !== 'OK') {
+        alert('Problème lors de la suppression');
+      }
     });
   }
 }
